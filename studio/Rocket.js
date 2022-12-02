@@ -23,12 +23,7 @@ var Rocket = /** @class */ (function () {
         return astroMass + this.sumMass(this.cargoItems);
     };
     Rocket.prototype.canAdd = function (item) {
-        if (this.currentMassKg() + item.massKg <= this.totalCapacityKg) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.currentMassKg() + item.massKg <= this.totalCapacityKg ? true : false;
     };
     Rocket.prototype.addCargo = function (cargo) {
         if (this.canAdd(cargo)) {
